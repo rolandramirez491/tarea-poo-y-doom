@@ -149,13 +149,10 @@ document.getElementById('horoscopoBtn').addEventListener('click', () => {
     const contenedor = document.getElementById('horoscopoContainer');
     const video = document.getElementById('backgroundVideo');
 
-    // Mostrar el video sobre todo el contenido
     video.classList.add('front');
-    
-    // Limpiar cualquier contenido previo
     contenedor.innerHTML = ''; 
 
-    // Aplicar transparencia a todo el contenido excepto los botones de signos
+   
     document.body.classList.add('transparent-all');
 
     signosZodiaco.forEach(signo => {
@@ -163,11 +160,10 @@ document.getElementById('horoscopoBtn').addEventListener('click', () => {
         boton.classList.add('signo');
         boton.textContent = signo;
 
-        // Inicializa la posición del botón
-        boton.style.top = `${Math.random() * 10}vh`; // Posición vertical aleatoria
-        boton.style.left = `${Math.random() * 10}vw`; // Posición horizontal aleatoria
+      
+        boton.style.top = `${Math.random() * 10}vh`; 
+        boton.style.left = `${Math.random() * 10}vw`; 
 
-        // Animar el movimiento
         function moverBoton() {
             boton.style.top = `${Math.random() * 69}vh`; 
             boton.style.left = `${Math.random() * 69}vw`; 
@@ -176,12 +172,12 @@ document.getElementById('horoscopoBtn').addEventListener('click', () => {
 
             setTimeout(() => {
                 boton.classList.remove('respirar');
-            }, 500); // Duración de la animación de respiración
+            }, 500); 
 
-            setTimeout(moverBoton, 1000); // Cambia de posición cada 2 segundos
+            setTimeout(moverBoton, 1000); 
         }
 
-        moverBoton(); // Iniciar movimiento
+        moverBoton();
 
         boton.addEventListener('click', () => {
             alert(`Horóscopo para ${signo}: ${generarHoroscopo()}`);
