@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+            overflow: hidden; 
+        }
+        .container {
+            text-align: center;
+            margin-top: 20px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            position: relative;
+            display: inline-block;
+        }
+        p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        .signo {
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gestor de Tareas</h1>
+        
+        <button id="adminBtn">Mostrar Administrador</button>
+        <button id="comercialBtn">Mostrar Comercial</button>
+        <p id="output"></p>
+        
+        <h2>Gestión de Tareas</h2>
+        <input type="text" id="tareaInput" placeholder="Escribe una tarea" />
+        <input type="text" id="personaInput" placeholder="Asignar a (persona)" />
+        
+        <button id="addTaskBtn">Añadir Tarea</button>
+        <button id="editTaskBtn">Modificar Tarea</button>
+        <button id="deleteTaskBtn">Eliminar Tarea</button>
+
+        <ul id="listaTareas"></ul>
+
+        <h2>Cambiar Color de Fondo del Párrafo</h2>
+        <p id="colorP">Este párrafo cambiará de color al presionar el boton.</p>
+        <button id="colorBtn">Cambiar Color</button>
+
+        <h2>Horóscopo</h2>
+        <button id="horoscopoBtn">Mostrar Horóscopo</button>
+        <div id="horoscopoContainer"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
