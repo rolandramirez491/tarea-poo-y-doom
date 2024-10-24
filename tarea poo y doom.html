@@ -4,53 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestor de Tareas</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-            position: relative;
-            overflow: hidden; 
-        }
-        .container {
-            text-align: center;
-            margin-top: 20px;
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        button {
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            position: relative;
-            display: inline-block;
-        }
-        p {
-            font-size: 18px;
-            font-weight: bold;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin: 5px 0;
-            font-size: 16px;
-        }
-        .signo {
-            margin: 5px;
-            padding: 10px;
-            border: 1px solid #333;
-            border-radius: 5px;
-            cursor: pointer;
-            display: inline-block;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -71,13 +25,18 @@
         <ul id="listaTareas"></ul>
 
         <h2>Cambiar Color de Fondo del Párrafo</h2>
-        <p id="colorP">Este párrafo cambiará de color al presionar el boton.</p>
+        <p id="colorP">Este párrafo cambiará de color al presionar el botón.</p>
         <button id="colorBtn">Cambiar Color</button>
 
         <h2>Horóscopo</h2>
         <button id="horoscopoBtn">Mostrar Horóscopo</button>
         <div id="horoscopoContainer"></div>
     </div>
+    
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="trip.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+    </video>
 
     <script src="script.js"></script>
 </body>

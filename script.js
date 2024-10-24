@@ -135,28 +135,53 @@ const horoscopos = [
     'Podrías recibir buenas noticias en el trabajo.',
     'Mantén la calma, vienen tiempos de cambio.',
     'Un encuentro inesperado te sorprenderá.',
-    'Tus finanzas mejorarán pronto, sigue ahorrando.',
-    'Alguien cercano necesita tu apoyo hoy.',
-    'Es momento de tomar decisiones importantes en tu vida.',
-    'Hoy es un buen día para relajarte y disfrutar.',
-    'Estás en el camino correcto, sigue adelante.',
-    'Tu creatividad será clave para resolver un problema.',
-    'Recibirás el reconocimiento que mereces por tu esfuerzo.'
+    'Tu intuición te guiará en decisiones importantes.',
+    'Es un buen momento para fortalecer relaciones.',
+    'Cuida tu salud, tómate un tiempo para ti.'
 ];
 
 function generarHoroscopo() {
-    const indice = Math.floor(Math.random() * horoscopos.length);
-    return horoscopos[indice];
+    const indiceAleatorio = Math.floor(Math.random() * horoscopos.length);
+    return horoscopos[indiceAleatorio];
 }
 
 document.getElementById('horoscopoBtn').addEventListener('click', () => {
     const contenedor = document.getElementById('horoscopoContainer');
+    const video = document.getElementById('backgroundVideo');
+
+    // Mostrar el video sobre todo el contenido
+    video.classList.add('front');
+    
+    // Limpiar cualquier contenido previo
     contenedor.innerHTML = ''; 
+
+    // Aplicar transparencia a todo el contenido excepto los botones de signos
+    document.body.classList.add('transparent-all');
 
     signosZodiaco.forEach(signo => {
         const boton = document.createElement('button');
         boton.classList.add('signo');
         boton.textContent = signo;
+
+        // Inicializa la posición del botón
+        boton.style.top = `${Math.random() * 10}vh`; // Posición vertical aleatoria
+        boton.style.left = `${Math.random() * 10}vw`; // Posición horizontal aleatoria
+
+        // Animar el movimiento
+        function moverBoton() {
+            boton.style.top = `${Math.random() * 69}vh`; 
+            boton.style.left = `${Math.random() * 69}vw`; 
+            boton.style.backgroundColor = colores[Math.floor(Math.random() * colores.length)];
+            boton.classList.add('respirar');
+
+            setTimeout(() => {
+                boton.classList.remove('respirar');
+            }, 500); // Duración de la animación de respiración
+
+            setTimeout(moverBoton, 1000); // Cambia de posición cada 2 segundos
+        }
+
+        moverBoton(); // Iniciar movimiento
 
         boton.addEventListener('click', () => {
             alert(`Horóscopo para ${signo}: ${generarHoroscopo()}`);
